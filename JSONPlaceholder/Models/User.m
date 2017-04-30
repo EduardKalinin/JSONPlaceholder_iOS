@@ -15,7 +15,7 @@
     if (self) {
         self.identifier = [dict[@"id"] integerValue];
         self.name = dict[@"name"];
-        self.userName = dict[@"userName"];
+        self.userName = dict[@"username"];
         self.email = dict[@"email"];
         self.phone = dict[@"phone"];
         self.website = dict[@"website"];
@@ -29,7 +29,7 @@
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     dict[@"id"] = @(self.identifier);
     dict[@"name"] = self.name;
-    dict[@"userName"] = self.userName;
+    dict[@"username"] = self.userName;
     dict[@"email"] = self.email;
     dict[@"phone"] = self.phone;
     dict[@"website"] = self.website;

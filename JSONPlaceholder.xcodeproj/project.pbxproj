@@ -30,6 +30,7 @@
 		841B12311EB52BA400B441DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B12301EB52BA400B441DE /* ViewController.m */; };
 		841B12351EB52BAA00B441DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B12341EB52BAA00B441DE /* AppDelegate.m */; };
 		841B12391EB5459D00B441DE /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B12381EB5459D00B441DE /* Constants.m */; };
+		84A874021EB65A7D0084E031 /* DetailUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A874011EB65A7D0084E031 /* DetailUserViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,8 @@
 		841B12371EB5459D00B441DE /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		841B12381EB5459D00B441DE /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		841B123A1EB5464800B441DE /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		84A874001EB65A7D0084E031 /* DetailUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailUserViewController.h; sourceTree = "<group>"; };
+		84A874011EB65A7D0084E031 /* DetailUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailUserViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +234,8 @@
 			children = (
 				841B122F1EB52BA400B441DE /* ViewController.h */,
 				841B12301EB52BA400B441DE /* ViewController.m */,
+				84A874001EB65A7D0084E031 /* DetailUserViewController.h */,
+				84A874011EB65A7D0084E031 /* DetailUserViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -359,6 +364,7 @@
 				841B12261EB52B9900B441DE /* Address.m in Sources */,
 				841B12121EB52B9000B441DE /* TodosService.m in Sources */,
 				841B11FF1EB52A8900B441DE /* TransportLayer.m in Sources */,
+				84A874021EB65A7D0084E031 /* DetailUserViewController.m in Sources */,
 				841B12281EB52B9900B441DE /* Comment.m in Sources */,
 				841B122A1EB52B9900B441DE /* Photo.m in Sources */,
 				841B12271EB52B9900B441DE /* Album.m in Sources */,
@@ -568,6 +574,7 @@
 				841B11C71EB4D43200B441DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		841B11C81EB4D43200B441DE /* Build configuration list for PBXNativeTarget "JSONPlaceholderTests" */ = {
 			isa = XCConfigurationList;
@@ -576,6 +583,7 @@
 				841B11CA1EB4D43200B441DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
