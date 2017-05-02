@@ -11,7 +11,7 @@
 
 @interface Post : NSObject <ModelProtocol>
 
-@property (assign, nonatomic) NSInteger postId;
+@property (assign, nonatomic) NSInteger userId;
 @property (assign, nonatomic) NSInteger identifier;
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *body;

@@ -15,7 +15,7 @@
     if (self) {
         self.userId = [dict[@"userId"] integerValue];
         self.identifier = [dict[@"id"] integerValue];
-        self.title = dict[@"title"];
+        self.title = [dict[@"title"] capitalizedString];
         self.completed = [dict[@"completed"] boolValue];
 
         ;    }

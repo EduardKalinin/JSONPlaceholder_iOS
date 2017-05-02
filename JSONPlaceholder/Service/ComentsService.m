@@ -103,4 +103,25 @@ NSString* const commentsPass = @"/comments";
     }];
 }
 
+- (void)commentsForPostWithID:(NSInteger)postID completion:(void(^)(NSArray *array, NSError *error))serviceCompletion {
+    NSString *url = [NSString stringWithFormat:@"%@%@?postId=%ld", BaseUrl, commentsPass, postID];
+    [self.transport getDataWithURL:[NSURL URLWithString:url] completion:^(NSData *data, NSError *error) {
+        if (error == nil) {
+            NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+            NSMutableArray *items = [NSMutableArray array];
+            for (NSDictionary *item in array) {
+                Comment *comment = [[Comment alloc] initWithJSON:item];
+                [items addObject:comment];
+            }
+            if (serviceCompletion) {
+                serviceCompletion(items, error);
+            }
+        } else {
+            if (serviceCompletion) {
+                serviceCompletion(nil, error);
+            }
+        }
+    }];
+}
+
 @end

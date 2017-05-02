@@ -13,9 +13,9 @@
 -(instancetype)initWithJSON:(NSDictionary *)dict {
     self = [super init];
     if (self) {
-        self.name = dict[@"name"];
-        self.catchPhrase = dict[@"catchPhrase"];
-        self.bs = dict[@"bs"];
+        self.name = [dict[@"name"] capitalizedString];
+        self.catchPhrase = [dict[@"catchPhrase"] capitalizedString];
+        self.bs = [dict[@"bs"] capitalizedString];
     }
     return self;
 }

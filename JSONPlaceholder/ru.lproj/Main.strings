@@ -1,0 +1,84 @@
+
+/* Class = "UILabel"; text = "Email:"; ObjectID = "1BJ-GV-Rm2"; */
+"1BJ-GV-Rm2.text" = "Почта:";
+
+/* Class = "UILabel"; text = "Zipcode:"; ObjectID = "1BR-au-xdE"; */
+"1BR-au-xdE.text" = "Индекс:";
+
+/* Class = "UILabel"; text = "Website:"; ObjectID = "4d8-LM-Jae"; */
+"4d8-LM-Jae.text" = "Сайт:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "6Nb-J8-dZB"; */
+"6Nb-J8-dZB.text" = "Label";
+
+/* Class = "UILabel"; text = "Name:"; ObjectID = "6T7-LE-jfX"; */
+"6T7-LE-jfX.text" = "Название:";
+
+/* Class = "UILabel"; text = "bs:"; ObjectID = "76G-hI-jEo"; */
+"76G-hI-jEo.text" = "BS:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "96n-5Q-wwb"; */
+"96n-5Q-wwb.text" = "Label";
+
+/* Class = "UILabel"; text = "Name:"; ObjectID = "GUr-yj-TfX"; */
+"GUr-yj-TfX.text" = "Имя:";
+
+/* Class = "UITableViewSection"; headerTitle = "User Info"; ObjectID = "L3C-8S-nT1"; */
+"L3C-8S-nT1.headerTitle" = "Общая информация";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "O2R-fx-vos"; */
+"O2R-fx-vos.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Psb-vW-W6u"; */
+"Psb-vW-W6u.text" = "Label";
+
+/* Class = "UILabel"; text = "Catch Phrase:"; ObjectID = "Ryh-CH-Nxu"; */
+"Ryh-CH-Nxu.text" = "Слоган:";
+
+/* Class = "UITableViewSection"; headerTitle = "Company"; ObjectID = "UYm-6E-XrR"; */
+"UYm-6E-XrR.headerTitle" = "Компания";
+
+/* Class = "UILabel"; text = "Street:"; ObjectID = "VBk-Kw-gbw"; */
+"VBk-Kw-gbw.text" = "Улица:";
+
+/* Class = "UITableViewSection"; headerTitle = "Address"; ObjectID = "ViH-2h-hGB"; */
+"ViH-2h-hGB.headerTitle" = "Адрес";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Vsi-7a-hBY"; */
+"Vsi-7a-hBY.text" = "Label";
+
+/* Class = "UILabel"; text = "User Name:"; ObjectID = "ZPN-8b-WTa"; */
+"ZPN-8b-WTa.text" = "Логин:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "bhq-u6-pqN"; */
+"bhq-u6-pqN.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dD6-XD-Xsv"; */
+"dD6-XD-Xsv.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dFe-Sj-LPn"; */
+"dFe-Sj-LPn.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "emg-Eq-tSg"; */
+"emg-Eq-tSg.text" = "Label";
+
+/* Class = "UILabel"; text = "Suite:"; ObjectID = "fRB-ym-34J"; */
+"fRB-ym-34J.text" = "Дом:";
+
+/* Class = "UIButton"; normalTitle = "Show on Map"; ObjectID = "hmu-Hy-Csx"; */
+"hmu-Hy-Csx.normalTitle" = "Показать на карте";
+
+/* Class = "UILabel"; text = "Phone:"; ObjectID = "n5i-8l-97F"; */
+"n5i-8l-97F.text" = "Телефон:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "o11-pr-PZa"; */
+"o11-pr-PZa.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "p11-6D-jJ4"; */
+"p11-6D-jJ4.text" = "Label";
+
+/* Class = "UILabel"; text = "City:"; ObjectID = "r13-i2-yuz"; */
+"r13-i2-yuz.text" = "Город:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "vGs-u8-Nfi"; */
+"vGs-u8-Nfi.text" = "Label";

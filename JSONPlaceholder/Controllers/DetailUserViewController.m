@@ -8,6 +8,7 @@
 
 #import "DetailUserViewController.h"
 #import "User.h"
+#import "PostsViewController.h"
 
 @interface DetailUserViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -29,6 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self configureLayout];
     [self addBarButtonItem];
 }
@@ -51,17 +53,17 @@
 #pragma mark - Bar Button
 
 - (void)addBarButtonItem {
-    UIImage *image = [UIImage imageNamed:@"albums"];
-    UIBarButtonItem *albumsButton = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(actionShowOnMapButtonClicked:)];
+    UIBarButtonItem *albumsButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"albums"]
+                                                                     style:UIBarButtonItemStylePlain
+                                                                    target:self
+                                                                    action:@selector(actionShowOnMapButtonClicked:)];
     
-    UIImage *image2 = [UIImage imageNamed:@"posts"];
-    UIBarButtonItem *commentsButton = [[UIBarButtonItem alloc] initWithImage:image2 style:UIBarButtonItemStylePlain target:self action:@selector(actionShowOnMapButtonClicked:)];
+    UIBarButtonItem *commentsButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"posts"]
+                                                                       style:UIBarButtonItemStylePlain
+                                                                      target:self
+                                                                      action:@selector(actionShowCommentsBarButtonClicked:)];
     
-    NSMutableArray *rightBarButtonArray = [NSMutableArray array];
-    [rightBarButtonArray addObject:albumsButton];
-    [rightBarButtonArray addObject:commentsButton];
-    
-    self.navigationItem.rightBarButtonItems = rightBarButtonArray;
+    self.navigationItem.rightBarButtonItems = @[albumsButton, commentsButton];
 }
 
 #pragma mark - Action
@@ -75,6 +77,15 @@
                                                          }];
     [alert addAction:actionCancel];
     [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)actionShowCommentsBarButtonClicked:(UIBarButtonItem *)sender {
+    
+    PostsViewController *postVC = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([PostsViewController class])];
+    postVC.user = self.user;
+    postVC.title = self.user.name;
+    [self.navigationController pushViewController:postVC animated:YES];
+    
 }
 
 @end

@@ -11,4 +11,6 @@
 
 @interface ComentsService : NSObject <ServiceProtocol>
 
+- (void)commentsForPostWithID:(NSInteger)userID completion:(void(^)(NSArray *array, NSError *error))serviceCompletion;
+
 @end

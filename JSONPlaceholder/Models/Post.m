@@ -13,17 +13,17 @@
 -(instancetype)initWithJSON:(NSDictionary *)dict {
     self = [super init];
     if (self) {
-        self.postId = [dict[@"postId"] integerValue];
+        self.userId = [dict[@"userId"] integerValue];
         self.identifier = [dict[@"id"] integerValue];
-        self.title = dict[@"title"];
-        self.body = dict[@"body"];
+        self.title = [dict[@"title"] capitalizedString];
+        self.body = [dict[@"body"] capitalizedString];
     }
     return self;
 }
 
 - (NSDictionary *)dictionaryReprisentation {
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    dict[@"postId"] = @(self.postId);
+    dict[@"userId"] = @(self.userId);
     dict[@"id"] = @(self.identifier);
     dict[@"title"] = self.title;
     dict[@"body"] = self.body;

@@ -11,4 +11,6 @@
 
 @interface PostsService : NSObject <ServiceProtocol>
 
+- (void)postsForUserWithID:(NSInteger)userID completion:(void(^)(NSArray *array, NSError *error))serviceCompletion;
+
 @end

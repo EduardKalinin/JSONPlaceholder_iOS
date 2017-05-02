@@ -15,7 +15,7 @@
     if (self) {
         self.albumId = [dict[@"albumId"] integerValue];
         self.identifier = [dict[@"id"] integerValue];
-        self.title = dict[@"title"];
+        self.title = [dict[@"title"] capitalizedString];
         self.url = [NSURL URLWithString:dict[@"url"]];
         self.thumbnailUrl = [NSURL URLWithString:dict[@"thumbnailUrl"]];
     }

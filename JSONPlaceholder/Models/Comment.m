@@ -15,9 +15,9 @@
     if (self) {
         self.postId = [dict[@"postId"] integerValue];
         self.identifier = [dict[@"id"] integerValue];
-        self.name = dict[@"name"];
+        self.name = [dict[@"name"] capitalizedString];
         self.email = dict[@"email"];
-        self.body = dict[@"body"];
+        self.body = [dict[@"body"] capitalizedString];
     }
     return self;
 }

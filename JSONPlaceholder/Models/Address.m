@@ -13,9 +13,9 @@
 -(instancetype)initWithJSON:(NSDictionary *)dict {
     self = [super init];
     if (self) {
-        self.street = dict[@"street"];
+        self.street = [dict[@"street"] capitalizedString];
         self.suite = dict[@"suite"];
-        self.city = dict[@"city"];
+        self.city = [dict[@"city"] capitalizedString];
         self.zipCode = [dict[@"zipcode"] integerValue];
         double lat = [dict[@"geo"][@"lat"] doubleValue];
         double lng = [dict[@"geo"][@"lng"] doubleValue];

@@ -103,4 +103,25 @@ NSString* const postsPass = @"/posts";
     }];
 }
 
+- (void)postsForUserWithID:(NSInteger)userID completion:(void(^)(NSArray *array, NSError *error))serviceCompletion {
+    NSString *url = [NSString stringWithFormat:@"%@%@?userId=%ld", BaseUrl, postsPass, userID];
+    [self.transport getDataWithURL:[NSURL URLWithString:url] completion:^(NSData *data, NSError *error) {
+        if (error == nil) {
+            NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+            NSMutableArray *items = [NSMutableArray array];
+            for (NSDictionary *item in array) {
+                Post *post = [[Post alloc] initWithJSON:item];
+                [items addObject:post];
+            }
+            if (serviceCompletion) {
+                serviceCompletion(items, error);
+            }
+        } else {
+            if (serviceCompletion) {
+                serviceCompletion(nil, error);
+            }
+        }
+    }];
+}
+
 @end

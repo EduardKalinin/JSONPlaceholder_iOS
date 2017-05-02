@@ -14,8 +14,8 @@
     self = [super init];
     if (self) {
         self.identifier = [dict[@"id"] integerValue];
-        self.name = dict[@"name"];
-        self.userName = dict[@"username"];
+        self.name = [dict[@"name"] capitalizedString];
+        self.userName = [dict[@"username"] capitalizedString];
         self.email = dict[@"email"];
         self.phone = dict[@"phone"];
         self.website = dict[@"website"];
