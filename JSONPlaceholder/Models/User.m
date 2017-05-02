@@ -33,8 +33,8 @@
     dict[@"email"] = self.email;
     dict[@"phone"] = self.phone;
     dict[@"website"] = self.website;
-    dict[@"address"] = self.address.dictionaryReprisentation;
-    dict[@"company"] = self.company.dictionaryReprisentation;
+    dict[@"address"] = [self.address dictionaryReprisentation];
+    dict[@"company"] = [self.company dictionaryReprisentation];
     
     return dict;
 }

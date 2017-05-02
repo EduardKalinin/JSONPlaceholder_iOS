@@ -1,30 +1,29 @@
 //
-//  ViewController.m
+//  UsersListViewController.m
 //  JSONPlaceholder
 //
 //  Created by Eduard Kalinin on 29.04.17.
 //  Copyright (c) 2017 Eduard Kalinin. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "UsersListViewController.h"
 #import "UsersService.h"
 #import "User.h"
 #import "DetailUserViewController.h"
 
-@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface UsersListViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *items;
 @property (strong, nonatomic) UsersService *userService;
 @end
 
-@implementation ViewController
+@implementation UsersListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.userService = [[UsersService alloc] init];
-    
     [self loadData];
 }
 
@@ -51,7 +50,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     User *selectedUser = [self.items objectAtIndex:indexPath.row];
-    DetailUserViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailUserViewController"];
+    DetailUserViewController *detailVC = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([DetailUserViewController class])];
     detailVC.user = selectedUser;
     [self.navigationController pushViewController:detailVC animated:true];
 }
@@ -59,7 +58,7 @@
 #pragma mark - LoadData
 
 - (void)loadData {
-    __weak ViewController *weakSelf = self;
+    __weak UsersListViewController *weakSelf = self;
     [self.userService getObjects:^(NSArray *items, NSError *error) {
         weakSelf.items = items;
         [weakSelf.tableView reloadData];

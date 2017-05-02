@@ -21,6 +21,7 @@
     self = [super init];
     if (self) {
         NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        configuration.requestCachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
         self.session = [NSURLSession sessionWithConfiguration:configuration];
     }
     return self;

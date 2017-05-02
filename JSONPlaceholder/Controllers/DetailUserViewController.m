@@ -7,6 +7,7 @@
 //
 
 #import "DetailUserViewController.h"
+#import "User.h"
 
 @interface DetailUserViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -21,7 +22,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameCompanyLabel;
 @property (weak, nonatomic) IBOutlet UILabel *catchLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bsLabel;
-- (IBAction)showOnMapAction:(UIButton *)sender;
 
 @end
 
@@ -30,6 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configureLayout];
+    [self addBarButtonItem];
 }
 
 - (void)configureLayout {
@@ -47,16 +48,31 @@
     self.bsLabel.text = self.user.company.bs;
 }
 
+#pragma mark - Bar Button
+
+- (void)addBarButtonItem {
+    UIImage *image = [UIImage imageNamed:@"albums"];
+    UIBarButtonItem *albumsButton = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(actionShowOnMapButtonClicked:)];
+    
+    UIImage *image2 = [UIImage imageNamed:@"posts"];
+    UIBarButtonItem *commentsButton = [[UIBarButtonItem alloc] initWithImage:image2 style:UIBarButtonItemStylePlain target:self action:@selector(actionShowOnMapButtonClicked:)];
+    
+    NSMutableArray *rightBarButtonArray = [NSMutableArray array];
+    [rightBarButtonArray addObject:albumsButton];
+    [rightBarButtonArray addObject:commentsButton];
+    
+    self.navigationItem.rightBarButtonItems = rightBarButtonArray;
+}
+
 #pragma mark - Action
 
-- (IBAction)showOnMapAction:(UIButton *)sender {
+- (IBAction)actionShowOnMapButtonClicked:(UIButton *)sender {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:
                                 @"Map" message:@"you are registred" preferredStyle:UIAlertControllerStyleAlert ];
     UIAlertAction *actionCancel = [UIAlertAction actionWithTitle:@"OK"
                                                            style:UIAlertActionStyleCancel
                                                          handler:^(UIAlertAction *action) {
                                                          }];
-    
     [alert addAction:actionCancel];
     [self presentViewController:alert animated:YES completion:nil];
 }

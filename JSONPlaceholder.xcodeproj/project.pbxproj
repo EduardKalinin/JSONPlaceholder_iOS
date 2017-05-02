@@ -27,7 +27,7 @@
 		841B122B1EB52B9900B441DE /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B12211EB52B9900B441DE /* Post.m */; };
 		841B122C1EB52B9900B441DE /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B12231EB52B9900B441DE /* Todo.m */; };
 		841B122D1EB52B9900B441DE /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B12251EB52B9900B441DE /* User.m */; };
-		841B12311EB52BA400B441DE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B12301EB52BA400B441DE /* ViewController.m */; };
+		841B12311EB52BA400B441DE /* UsersListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B12301EB52BA400B441DE /* UsersListViewController.m */; };
 		841B12351EB52BAA00B441DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B12341EB52BAA00B441DE /* AppDelegate.m */; };
 		841B12391EB5459D00B441DE /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B12381EB5459D00B441DE /* Constants.m */; };
 		84A874021EB65A7D0084E031 /* DetailUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A874011EB65A7D0084E031 /* DetailUserViewController.m */; };
@@ -85,8 +85,8 @@
 		841B12231EB52B9900B441DE /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Todo.m; sourceTree = "<group>"; };
 		841B12241EB52B9900B441DE /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		841B12251EB52B9900B441DE /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		841B122F1EB52BA400B441DE /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		841B12301EB52BA400B441DE /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		841B122F1EB52BA400B441DE /* UsersListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersListViewController.h; sourceTree = "<group>"; };
+		841B12301EB52BA400B441DE /* UsersListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersListViewController.m; sourceTree = "<group>"; };
 		841B12331EB52BAA00B441DE /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		841B12341EB52BAA00B441DE /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		841B12371EB5459D00B441DE /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
@@ -232,8 +232,8 @@
 		841B122E1EB52BA400B441DE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				841B122F1EB52BA400B441DE /* ViewController.h */,
-				841B12301EB52BA400B441DE /* ViewController.m */,
+				841B122F1EB52BA400B441DE /* UsersListViewController.h */,
+				841B12301EB52BA400B441DE /* UsersListViewController.m */,
 				84A874001EB65A7D0084E031 /* DetailUserViewController.h */,
 				84A874011EB65A7D0084E031 /* DetailUserViewController.m */,
 			);
@@ -358,7 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				841B12311EB52BA400B441DE /* ViewController.m in Sources */,
+				841B12311EB52BA400B441DE /* UsersListViewController.m in Sources */,
 				841B122D1EB52B9900B441DE /* User.m in Sources */,
 				841B12351EB52BAA00B441DE /* AppDelegate.m in Sources */,
 				841B12261EB52B9900B441DE /* Address.m in Sources */,

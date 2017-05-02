@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  UsersListViewController.h
 //  JSONPlaceholder
 //
 //  Created by Eduard Kalinin on 29.04.17.
@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface UsersListViewController : UIViewController
 
 @end
 
