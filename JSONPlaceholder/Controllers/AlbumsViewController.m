@@ -1,31 +1,31 @@
 //
-//  CommentsViewController.m
+//  AlbumsViewController.m
 //  JSONPlaceholder
 //
-//  Created by Eduard Kalinin on 02.05.17.
+//  Created by Eduard Kalinin on 03.05.17.
 //  Copyright (c) 2017 Eduard Kalinin. All rights reserved.
 //
 
-#import "CommentsViewController.h"
-#import "ComentsService.h"
-#import "Comment.h"
-#import "Post.h"
+#import "AlbumsViewController.h"
+#import "AlbumsService.h"
+#import "Album.h"
+#import "User.h"
+#import "PhotosViewController.h"
 
-@interface CommentsViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface AlbumsViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *bodyLabel;
 @property (strong, nonatomic) NSArray *items;
-@property (strong, nonatomic) ComentsService *commentService;
+@property (strong, nonatomic) AlbumsService *albumService;
 
 @end
 
-@implementation CommentsViewController
+@implementation AlbumsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.commentService = [[ComentsService alloc] init];
+    
+    self.albumService = [[AlbumsService alloc] init];
     [self configureLayout];
     [self loadData];
 }
@@ -33,8 +33,7 @@
 #pragma mark - Helpers
 
 - (void)configureLayout {
-    self.titleLabel.text = self.post.title;    
-    self.bodyLabel.text = self.post.body;
+    self.title = self.user.name;
 }
 
 #pragma mark - UITableViewDataSource
@@ -50,9 +49,9 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
-    Comment *comment = [self.items objectAtIndex:indexPath.row];
+    Album *album = [self.items objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = comment.body;
+    cell.textLabel.text = album.title;
     
     return cell;
 }
@@ -60,14 +59,17 @@
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    Album *selectedAlbum = [self.items objectAtIndex:indexPath.row];
+    PhotosViewController *photoVC = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([PhotosViewController class])];
+    photoVC.album = selectedAlbum;
+    [self.navigationController pushViewController:photoVC animated:true];
 }
 
 #pragma mark - LoadData
 
 - (void)loadData {
-    __weak CommentsViewController *weakSelf = self;
-    [self.commentService commentsForPostWithID:self.post.identifier completion:^(NSArray *array, NSError *error) {
+    __weak AlbumsViewController *weakSelf = self;
+    [self.albumService albumsForUsertWithID:self.user.identifier completion:^(NSArray *array, NSError *error) {
         weakSelf.items = array;
         [weakSelf.tableView reloadData];
     }];

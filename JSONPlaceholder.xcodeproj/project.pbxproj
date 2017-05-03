@@ -33,6 +33,11 @@
 		84A874021EB65A7D0084E031 /* DetailUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A874011EB65A7D0084E031 /* DetailUserViewController.m */; };
 		84D3B95A1EB8CC94003A6EB8 /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D3B9591EB8CC94003A6EB8 /* CommentsViewController.m */; };
 		84D3B95D1EB8E679003A6EB8 /* PostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D3B95C1EB8E679003A6EB8 /* PostsViewController.m */; };
+		84D3B9681EB95647003A6EB8 /* AlbumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D3B9671EB95647003A6EB8 /* AlbumsViewController.m */; };
+		84D3B96E1EB95F0C003A6EB8 /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D3B96D1EB95F0C003A6EB8 /* PhotosViewController.m */; };
+		84D3B9761EB9EAE5003A6EB8 /* CustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D3B9751EB9EAE5003A6EB8 /* CustomCollectionViewCell.m */; };
+		84D3B9791EBA220B003A6EB8 /* DownloadImageService.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D3B9781EBA220B003A6EB8 /* DownloadImageService.m */; };
+		84D3B97C1EBA4BFE003A6EB8 /* DetailFotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D3B97B1EBA4BFE003A6EB8 /* DetailFotoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +106,16 @@
 		84D3B95B1EB8E679003A6EB8 /* PostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostsViewController.h; sourceTree = "<group>"; };
 		84D3B95C1EB8E679003A6EB8 /* PostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostsViewController.m; sourceTree = "<group>"; };
 		84D3B9601EB910D0003A6EB8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		84D3B9661EB95647003A6EB8 /* AlbumsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumsViewController.h; sourceTree = "<group>"; };
+		84D3B9671EB95647003A6EB8 /* AlbumsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumsViewController.m; sourceTree = "<group>"; };
+		84D3B96C1EB95F0C003A6EB8 /* PhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosViewController.h; sourceTree = "<group>"; };
+		84D3B96D1EB95F0C003A6EB8 /* PhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosViewController.m; sourceTree = "<group>"; };
+		84D3B9741EB9EAE5003A6EB8 /* CustomCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewCell.h; sourceTree = "<group>"; };
+		84D3B9751EB9EAE5003A6EB8 /* CustomCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewCell.m; sourceTree = "<group>"; };
+		84D3B9771EBA220B003A6EB8 /* DownloadImageService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadImageService.h; sourceTree = "<group>"; };
+		84D3B9781EBA220B003A6EB8 /* DownloadImageService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadImageService.m; sourceTree = "<group>"; };
+		84D3B97A1EBA4BFE003A6EB8 /* DetailFotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailFotoViewController.h; sourceTree = "<group>"; };
+		84D3B97B1EBA4BFE003A6EB8 /* DetailFotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailFotoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +157,7 @@
 		841B11A41EB4D43100B441DE /* JSONPlaceholder */ = {
 			isa = PBXGroup;
 			children = (
+				84D3B9731EB9EAE5003A6EB8 /* Views */,
 				841B12361EB5455E00B441DE /* Resourses */,
 				841B12141EB52B9900B441DE /* Models */,
 				841B12001EB52B9000B441DE /* Service */,
@@ -208,6 +224,8 @@
 				841B120B1EB52B9000B441DE /* TodosService.m */,
 				841B120C1EB52B9000B441DE /* UsersService.h */,
 				841B120D1EB52B9000B441DE /* UsersService.m */,
+				84D3B9771EBA220B003A6EB8 /* DownloadImageService.h */,
+				84D3B9781EBA220B003A6EB8 /* DownloadImageService.m */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -216,22 +234,22 @@
 			isa = PBXGroup;
 			children = (
 				841B121D1EB52B9900B441DE /* ModelProtocol.h */,
-				841B12151EB52B9900B441DE /* Address.h */,
-				841B12161EB52B9900B441DE /* Address.m */,
 				841B12171EB52B9900B441DE /* Album.h */,
 				841B12181EB52B9900B441DE /* Album.m */,
-				841B12191EB52B9900B441DE /* Comment.h */,
-				841B121A1EB52B9900B441DE /* Comment.m */,
-				841B121B1EB52B9900B441DE /* Company.h */,
-				841B121C1EB52B9900B441DE /* Company.m */,
 				841B121E1EB52B9900B441DE /* Photo.h */,
 				841B121F1EB52B9900B441DE /* Photo.m */,
 				841B12201EB52B9900B441DE /* Post.h */,
 				841B12211EB52B9900B441DE /* Post.m */,
+				841B12191EB52B9900B441DE /* Comment.h */,
+				841B121A1EB52B9900B441DE /* Comment.m */,
 				841B12221EB52B9900B441DE /* Todo.h */,
 				841B12231EB52B9900B441DE /* Todo.m */,
 				841B12241EB52B9900B441DE /* User.h */,
 				841B12251EB52B9900B441DE /* User.m */,
+				841B12151EB52B9900B441DE /* Address.h */,
+				841B12161EB52B9900B441DE /* Address.m */,
+				841B121B1EB52B9900B441DE /* Company.h */,
+				841B121C1EB52B9900B441DE /* Company.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -247,6 +265,12 @@
 				84D3B95C1EB8E679003A6EB8 /* PostsViewController.m */,
 				84D3B9581EB8CC94003A6EB8 /* CommentsViewController.h */,
 				84D3B9591EB8CC94003A6EB8 /* CommentsViewController.m */,
+				84D3B9661EB95647003A6EB8 /* AlbumsViewController.h */,
+				84D3B9671EB95647003A6EB8 /* AlbumsViewController.m */,
+				84D3B96C1EB95F0C003A6EB8 /* PhotosViewController.h */,
+				84D3B96D1EB95F0C003A6EB8 /* PhotosViewController.m */,
+				84D3B97A1EBA4BFE003A6EB8 /* DetailFotoViewController.h */,
+				84D3B97B1EBA4BFE003A6EB8 /* DetailFotoViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -267,6 +291,15 @@
 				841B12381EB5459D00B441DE /* Constants.m */,
 			);
 			path = Resourses;
+			sourceTree = "<group>";
+		};
+		84D3B9731EB9EAE5003A6EB8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				84D3B9741EB9EAE5003A6EB8 /* CustomCollectionViewCell.h */,
+				84D3B9751EB9EAE5003A6EB8 /* CustomCollectionViewCell.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,18 +408,23 @@
 				841B12261EB52B9900B441DE /* Address.m in Sources */,
 				841B12121EB52B9000B441DE /* TodosService.m in Sources */,
 				84D3B95A1EB8CC94003A6EB8 /* CommentsViewController.m in Sources */,
+				84D3B97C1EBA4BFE003A6EB8 /* DetailFotoViewController.m in Sources */,
 				841B11FF1EB52A8900B441DE /* TransportLayer.m in Sources */,
 				84A874021EB65A7D0084E031 /* DetailUserViewController.m in Sources */,
 				841B12281EB52B9900B441DE /* Comment.m in Sources */,
+				84D3B9761EB9EAE5003A6EB8 /* CustomCollectionViewCell.m in Sources */,
+				84D3B9681EB95647003A6EB8 /* AlbumsViewController.m in Sources */,
 				841B122A1EB52B9900B441DE /* Photo.m in Sources */,
 				841B12271EB52B9900B441DE /* Album.m in Sources */,
 				841B12101EB52B9000B441DE /* PhotosService.m in Sources */,
+				84D3B96E1EB95F0C003A6EB8 /* PhotosViewController.m in Sources */,
 				841B120F1EB52B9000B441DE /* ComentsService.m in Sources */,
 				841B12291EB52B9900B441DE /* Company.m in Sources */,
 				841B12131EB52B9000B441DE /* UsersService.m in Sources */,
 				841B122C1EB52B9900B441DE /* Todo.m in Sources */,
 				841B120E1EB52B9000B441DE /* AlbumsService.m in Sources */,
 				841B11A81EB4D43100B441DE /* main.m in Sources */,
+				84D3B9791EBA220B003A6EB8 /* DownloadImageService.m in Sources */,
 				841B12111EB52B9000B441DE /* PostsService.m in Sources */,
 				841B122B1EB52B9900B441DE /* Post.m in Sources */,
 				84D3B95D1EB8E679003A6EB8 /* PostsViewController.m in Sources */,

@@ -9,6 +9,7 @@
 #import "DetailUserViewController.h"
 #import "User.h"
 #import "PostsViewController.h"
+#import "AlbumsViewController.h"
 
 @interface DetailUserViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -32,10 +33,16 @@
     [super viewDidLoad];
     
     [self configureLayout];
+}
+
+#pragma mark - Helpers
+
+- (void)configureLayout {
+    [self configureUserInfo];
     [self addBarButtonItem];
 }
 
-- (void)configureLayout {
+- (void)configureUserInfo {
     self.nameLabel.text = self.user.name;
     self.userNameLabel.text = self.user.userName;
     self.emailLabel.text = self.user.email;
@@ -56,7 +63,7 @@
     UIBarButtonItem *albumsButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"albums"]
                                                                      style:UIBarButtonItemStylePlain
                                                                     target:self
-                                                                    action:@selector(actionShowOnMapButtonClicked:)];
+                                                                    action:@selector(actionShowAlbumssBarButtonClicked:)];
     
     UIBarButtonItem *commentsButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"posts"]
                                                                        style:UIBarButtonItemStylePlain
@@ -83,8 +90,15 @@
     
     PostsViewController *postVC = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([PostsViewController class])];
     postVC.user = self.user;
-    postVC.title = self.user.name;
     [self.navigationController pushViewController:postVC animated:YES];
+    
+}
+
+- (void)actionShowAlbumssBarButtonClicked:(UIBarButtonItem *)sender {
+    
+    AlbumsViewController *albumVC = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([AlbumsViewController class])];
+    albumVC.user = self.user;
+    [self.navigationController pushViewController:albumVC animated:YES];
     
 }
 

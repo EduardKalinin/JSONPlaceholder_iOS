@@ -10,7 +10,7 @@
 #import "TransportLayer.h"
 #import "Photo.h"
 
-NSString* const photosPass = @"/photos";
+NSString* const photosPath = @"/photos";
 
 @interface PhotosService ()
 
@@ -30,7 +30,7 @@ NSString* const photosPass = @"/photos";
 }
 
 - (void)getObjects:(void (^)(NSArray *items, NSError *error))serviceCompletion {
-    NSString *url = [NSString stringWithFormat:@"%@%@", BaseUrl, photosPass];
+    NSString *url = [NSString stringWithFormat:@"%@%@", BaseUrl, photosPath];
     [self.transport getDataWithURL:[NSURL URLWithString:url] completion:^(NSData *data, NSError *error) {
         if (error == nil) {
             NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
@@ -51,7 +51,7 @@ NSString* const photosPass = @"/photos";
 }
 
 - (void)getObjectWithId:(NSInteger)identifier completion:(void (^)(NSObject *object, NSError *error))serviceCompletion {
-    NSString *url = [NSString stringWithFormat:@"%@%@/%ld", BaseUrl, photosPass, identifier];
+    NSString *url = [NSString stringWithFormat:@"%@%@/%ld", BaseUrl, photosPath, identifier];
     [self.transport getDataWithURL:[NSURL URLWithString:url] completion:^(NSData *data, NSError *error) {
         if (error == nil) {
             NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
@@ -69,7 +69,7 @@ NSString* const photosPass = @"/photos";
 }
 
 - (void)createObjects:(NSArray *)array completion:(void (^)(NSError *error))serviceCompletion {
-    NSString *url = [NSString stringWithFormat:@"%@%@", BaseUrl, photosPass];
+    NSString *url = [NSString stringWithFormat:@"%@%@", BaseUrl, photosPath];
     NSMutableArray *mutArray = [NSMutableArray array];
     for (Photo *photo in array) {
         [mutArray addObject:[photo dictionaryReprisentation]];
@@ -84,7 +84,7 @@ NSString* const photosPass = @"/photos";
 
 - (void)updateObjectWithId:(NSInteger)identifier object:(NSObject*)object completion:(void (^)(NSError *error))serviceCompletion {
     Photo *photo = (Photo *)object;
-    NSString *url = [NSString stringWithFormat:@"%@%@/%ld", BaseUrl, photosPass, identifier];
+    NSString *url = [NSString stringWithFormat:@"%@%@/%ld", BaseUrl, photosPath, identifier];
     NSDictionary* dict = [photo dictionaryReprisentation];
     NSData *data = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:nil];
     [self.transport executeRequestWithType:POST data:data URL:[NSURL URLWithString:url] completion:^(NSError *error) {
@@ -95,10 +95,31 @@ NSString* const photosPass = @"/photos";
 }
 
 - (void)deleteObjectWithId:(NSInteger)identifier completion:(void (^)(NSError *))serviceCompletion {
-    NSString *url = [NSString stringWithFormat:@"%@%@/%ld", BaseUrl, photosPass, identifier];
+    NSString *url = [NSString stringWithFormat:@"%@%@/%ld", BaseUrl, photosPath, identifier];
     [self.transport executeRequestWithType:POST data:nil URL:[NSURL URLWithString:url] completion:^(NSError *error) {
         if (serviceCompletion) {
             serviceCompletion(error);
+        }
+    }];
+}
+
+- (void)photosForAlbumWithID:(NSInteger)albumID completion:(void(^)(NSArray *array, NSError *error))serviceCompletion {
+    NSString *url = [NSString stringWithFormat:@"%@%@?albumId=%ld", BaseUrl, photosPath, albumID];
+    [self.transport getDataWithURL:[NSURL URLWithString:url] completion:^(NSData *data, NSError *error) {
+        if (error == nil) {
+            NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+            NSMutableArray *items = [NSMutableArray array];
+            for (NSDictionary *item in array) {
+                Photo *photo = [[Photo alloc] initWithJSON:item];
+                [items addObject:photo];
+            }
+            if (serviceCompletion) {
+                serviceCompletion(items, error);
+            }
+        } else {
+            if (serviceCompletion) {
+                serviceCompletion(nil, error);
+            }
         }
     }];
 }

@@ -11,4 +11,6 @@
 
 @interface PhotosService : NSObject <ServiceProtocol>
 
+- (void)photosForAlbumWithID:(NSInteger)albumID completion:(void(^)(NSArray *array, NSError *error))serviceCompletion;
+
 @end

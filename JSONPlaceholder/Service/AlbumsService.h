@@ -11,4 +11,6 @@
 
 @interface AlbumsService : NSObject <ServiceProtocol>
 
+- (void)albumsForUsertWithID:(NSInteger)userID completion:(void(^)(NSArray *array, NSError *error))serviceCompletion;
+
 @end

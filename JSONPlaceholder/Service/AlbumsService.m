@@ -103,4 +103,25 @@ NSString* const albumsPass = @"/albums";
     }];
 }
 
+- (void)albumsForUsertWithID:(NSInteger)userID completion:(void(^)(NSArray *array, NSError *error))serviceCompletion {
+    NSString *url = [NSString stringWithFormat:@"%@%@?userId=%ld", BaseUrl, albumsPass, userID];
+    [self.transport getDataWithURL:[NSURL URLWithString:url] completion:^(NSData *data, NSError *error) {
+        if (error == nil) {
+            NSArray *array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+            NSMutableArray *items = [NSMutableArray array];
+            for (NSDictionary *item in array) {
+                Album *album = [[Album alloc] initWithJSON:item];
+                [items addObject:album];
+            }
+            if (serviceCompletion) {
+                serviceCompletion(items, error);
+            }
+        } else {
+            if (serviceCompletion) {
+                serviceCompletion(nil, error);
+            }
+        }
+    }];
+}
+
 @end

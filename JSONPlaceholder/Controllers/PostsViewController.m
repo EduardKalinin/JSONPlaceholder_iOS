@@ -25,8 +25,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.postService = [[PostsService alloc] init];
+    [self configureLayout];
     [self loadData];
 }
+
+#pragma mark - Helpers
+
+- (void)configureLayout {
+    self.title = self.user.name;
+}
+
+#pragma mark - UITableViewDataSource	
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.items.count;
@@ -42,7 +51,6 @@
     Post *posts = [self.items objectAtIndex:indexPath.row];
     
     cell.textLabel.text = posts.title;
-//    cell.textLabel.textAlignment = NSTextAlignmentCenter;
     
     return cell;
 }
