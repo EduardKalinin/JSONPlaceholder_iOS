@@ -10,6 +10,7 @@
 #import "ComentsService.h"
 #import "Comment.h"
 #import "Post.h"
+#import "AddCommentViewController.h"
 
 @interface CommentsViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -27,6 +28,7 @@
     [super viewDidLoad];
     self.commentService = [[ComentsService alloc] init];
     [self configureLayout];
+    [self addBarButtonItem];
     [self loadData];
 }
 
@@ -71,6 +73,24 @@
         weakSelf.items = array;
         [weakSelf.tableView reloadData];
     }];
+}
+
+#pragma mark - BarButton
+
+- (void)addBarButtonItem {
+    UIBarButtonItem *addCommentButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(actionCommentWithButtonClicked:)];
+    
+    self.navigationItem.rightBarButtonItem = addCommentButton;
+}
+
+#pragma mark - Actions
+
+- (void)actionCommentWithButtonClicked:(UIBarButtonItem *)sender {
+    AddCommentViewController *addCommVC = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([AddCommentViewController class])];
+    addCommVC.post = self.post;
+    UINavigationController *navVC = [[UINavigationController alloc]initWithRootViewController:addCommVC];
+    [self presentViewController:navVC animated:YES completion:nil];
+
 }
 
 @end

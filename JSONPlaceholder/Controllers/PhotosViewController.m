@@ -12,7 +12,7 @@
 #import "CustomCollectionViewCell.h"
 #import "Album.h"
 #import "DownloadImageService.h"
-#import "DetailFotoViewController.h"
+#import "DetailPhotoViewController.h"
 
 @interface PhotosViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -58,7 +58,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     Photo *selectedPhoto = [self.items objectAtIndex:indexPath.row];
-    DetailFotoViewController *photoVC = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([DetailFotoViewController class])];
+    DetailPhotoViewController *photoVC = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([DetailPhotoViewController class])];
     photoVC.photo = selectedPhoto;
     UINavigationController *navVC = [[UINavigationController alloc]initWithRootViewController:photoVC];
     [self presentViewController:navVC animated:YES completion:nil];

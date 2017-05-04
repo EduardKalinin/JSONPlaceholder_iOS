@@ -1,5 +1,5 @@
 //
-//  DetailFotoViewController.h
+//  AddCommentViewController.h
 //  JSONPlaceholder
 //
 //  Created by Eduard Kalinin on 03.05.17.
@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@class Photo;
+@class Post;
 
-@interface DetailFotoViewController : UIViewController
+@interface AddCommentViewController : UIViewController
 
-@property (strong, nonatomic) Photo *photo;
+@property (strong, nonatomic) Post *post;
 
 @end

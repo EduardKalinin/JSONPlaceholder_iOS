@@ -37,7 +37,9 @@
 		84D3B96E1EB95F0C003A6EB8 /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D3B96D1EB95F0C003A6EB8 /* PhotosViewController.m */; };
 		84D3B9761EB9EAE5003A6EB8 /* CustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D3B9751EB9EAE5003A6EB8 /* CustomCollectionViewCell.m */; };
 		84D3B9791EBA220B003A6EB8 /* DownloadImageService.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D3B9781EBA220B003A6EB8 /* DownloadImageService.m */; };
-		84D3B97C1EBA4BFE003A6EB8 /* DetailFotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D3B97B1EBA4BFE003A6EB8 /* DetailFotoViewController.m */; };
+		84D3B97C1EBA4BFE003A6EB8 /* DetailPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D3B97B1EBA4BFE003A6EB8 /* DetailPhotoViewController.m */; };
+		84D3B97F1EBA75FB003A6EB8 /* AddCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D3B97E1EBA75FB003A6EB8 /* AddCommentViewController.m */; };
+		84D3B9831EBAA966003A6EB8 /* UIAlertController+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D3B9821EBAA966003A6EB8 /* UIAlertController+Utils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,8 +116,12 @@
 		84D3B9751EB9EAE5003A6EB8 /* CustomCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewCell.m; sourceTree = "<group>"; };
 		84D3B9771EBA220B003A6EB8 /* DownloadImageService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadImageService.h; sourceTree = "<group>"; };
 		84D3B9781EBA220B003A6EB8 /* DownloadImageService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadImageService.m; sourceTree = "<group>"; };
-		84D3B97A1EBA4BFE003A6EB8 /* DetailFotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailFotoViewController.h; sourceTree = "<group>"; };
-		84D3B97B1EBA4BFE003A6EB8 /* DetailFotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailFotoViewController.m; sourceTree = "<group>"; };
+		84D3B97A1EBA4BFE003A6EB8 /* DetailPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailPhotoViewController.h; sourceTree = "<group>"; };
+		84D3B97B1EBA4BFE003A6EB8 /* DetailPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPhotoViewController.m; sourceTree = "<group>"; };
+		84D3B97D1EBA75FB003A6EB8 /* AddCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCommentViewController.h; sourceTree = "<group>"; };
+		84D3B97E1EBA75FB003A6EB8 /* AddCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCommentViewController.m; sourceTree = "<group>"; };
+		84D3B9811EBAA966003A6EB8 /* UIAlertController+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Utils.h"; sourceTree = "<group>"; };
+		84D3B9821EBAA966003A6EB8 /* UIAlertController+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Utils.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +163,7 @@
 		841B11A41EB4D43100B441DE /* JSONPlaceholder */ = {
 			isa = PBXGroup;
 			children = (
+				84D3B9801EBAA80A003A6EB8 /* Support */,
 				84D3B9731EB9EAE5003A6EB8 /* Views */,
 				841B12361EB5455E00B441DE /* Resourses */,
 				841B12141EB52B9900B441DE /* Models */,
@@ -269,8 +276,10 @@
 				84D3B9671EB95647003A6EB8 /* AlbumsViewController.m */,
 				84D3B96C1EB95F0C003A6EB8 /* PhotosViewController.h */,
 				84D3B96D1EB95F0C003A6EB8 /* PhotosViewController.m */,
-				84D3B97A1EBA4BFE003A6EB8 /* DetailFotoViewController.h */,
-				84D3B97B1EBA4BFE003A6EB8 /* DetailFotoViewController.m */,
+				84D3B97A1EBA4BFE003A6EB8 /* DetailPhotoViewController.h */,
+				84D3B97B1EBA4BFE003A6EB8 /* DetailPhotoViewController.m */,
+				84D3B97D1EBA75FB003A6EB8 /* AddCommentViewController.h */,
+				84D3B97E1EBA75FB003A6EB8 /* AddCommentViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -300,6 +309,15 @@
 				84D3B9751EB9EAE5003A6EB8 /* CustomCollectionViewCell.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		84D3B9801EBAA80A003A6EB8 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				84D3B9811EBAA966003A6EB8 /* UIAlertController+Utils.h */,
+				84D3B9821EBAA966003A6EB8 /* UIAlertController+Utils.m */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,7 +426,7 @@
 				841B12261EB52B9900B441DE /* Address.m in Sources */,
 				841B12121EB52B9000B441DE /* TodosService.m in Sources */,
 				84D3B95A1EB8CC94003A6EB8 /* CommentsViewController.m in Sources */,
-				84D3B97C1EBA4BFE003A6EB8 /* DetailFotoViewController.m in Sources */,
+				84D3B97C1EBA4BFE003A6EB8 /* DetailPhotoViewController.m in Sources */,
 				841B11FF1EB52A8900B441DE /* TransportLayer.m in Sources */,
 				84A874021EB65A7D0084E031 /* DetailUserViewController.m in Sources */,
 				841B12281EB52B9900B441DE /* Comment.m in Sources */,
@@ -418,7 +436,9 @@
 				841B12271EB52B9900B441DE /* Album.m in Sources */,
 				841B12101EB52B9000B441DE /* PhotosService.m in Sources */,
 				84D3B96E1EB95F0C003A6EB8 /* PhotosViewController.m in Sources */,
+				84D3B97F1EBA75FB003A6EB8 /* AddCommentViewController.m in Sources */,
 				841B120F1EB52B9000B441DE /* ComentsService.m in Sources */,
+				84D3B9831EBAA966003A6EB8 /* UIAlertController+Utils.m in Sources */,
 				841B12291EB52B9900B441DE /* Company.m in Sources */,
 				841B12131EB52B9000B441DE /* UsersService.m in Sources */,
 				841B122C1EB52B9900B441DE /* Todo.m in Sources */,

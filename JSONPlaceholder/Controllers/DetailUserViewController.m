@@ -57,7 +57,7 @@
     self.bsLabel.text = self.user.company.bs;
 }
 
-#pragma mark - Bar Button
+#pragma mark - BarButton
 
 - (void)addBarButtonItem {
     UIBarButtonItem *albumsButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"albums"]

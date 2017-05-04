@@ -1,17 +1,17 @@
 //
-//  DetailFotoViewController.m
+//  DetailPhotoViewController.m
 //  JSONPlaceholder
 //
 //  Created by Eduard Kalinin on 03.05.17.
 //  Copyright (c) 2017 Eduard Kalinin. All rights reserved.
 //
 
-#import "DetailFotoViewController.h"
+#import "DetailPhotoViewController.h"
 #import "Photo.h"
 #import "DownloadImageService.h"
 #import "PhotosService.h"
 
-@interface DetailFotoViewController ()
+@interface DetailPhotoViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -19,14 +19,13 @@
 
 @end
 
-@implementation DetailFotoViewController
+@implementation DetailPhotoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.imageService = [[DownloadImageService alloc] init];
     [self configureLayout];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(actionCancelBarButtonClicked:)];
-    
 }
 
 - (void)configureLayout {
@@ -39,6 +38,8 @@
     
     self.titleLabel.text = self.photo.title;
 }
+
+#pragma mark - Actions
 
 - (void)actionCancelBarButtonClicked:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
